@@ -105,7 +105,57 @@ function main() {
   console.log(arr);
 }
 
-main()
+// main()
+
+function URLify(str) {
+  let newStr= str.replace(/\s+/g, '%20')
+  console.log(newStr)
+}
+
+// URLify('www.thinkful.com /tauh ida parv een')
+//the function is linear O(n)
+
+// function filterArr(arr) {
+//   const newArr = [];
+//   for (let i= 0; i < arr.length; i++){
+//     if(arr[i] >= 5){
+//       newArr.push(arr[i])
+//     } 
+//   }
+//   console.log(newArr)
+//   return newArr
+// }
+
+// filterArr([1, 2 , 3, 4, 5, 6])
+
+//This function is linear O(n)
+//As the array size increases so does the amount of work
+
+
+function maxSum1(arr){
+
+  if(arr.length === 0) {
+    return null;
+  }
+  let maxSum = 0, maxSumHere = 0;
+
+  for(let i = 0; i < arr.length; i++){
+    maxSumHere += arr[i];
+    if(maxSumHere < 0){
+      maxSumHere = 0
+    }
+    else if (maxSum < maxSumHere){
+      maxSum = maxSumHere
+    }
+    
+  }
+return maxSum
+}
+
+
+// console.log(maxSum1([4, 6, -3, 5, -2, 1]))
+//This function is linear c(n)
+
 
 Array.SIZE_RATIO = 3;
 
